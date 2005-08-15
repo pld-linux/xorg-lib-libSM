@@ -1,0 +1,110 @@
+
+#
+Summary:	Session Management library
+Summary(pl):	Biblioteka zarz±dzania sesj±
+Name:		xorg-lib-libSM
+Version:	0.99.0
+Release:	0.02
+License:	MIT
+Group:		X11/Libraries
+Source0:	http://xorg.freedesktop.org/X11R7.0-RC0/lib/libSM-%{version}.tar.bz2
+# Source0-md5:	dc7e3578105f8ac1c0db58a5e292bc7f
+URL:		http://xorg.freedesktop.org/
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	xorg-lib-libICE-devel
+BuildRequires:	libtool
+BuildRequires:	pkg-config
+BuildRequires:	xorg-util-util-macros
+BuildRequires:	xorg-lib-xtrans-devel
+BuildRoot:	%{tmpdir}/libSM-%{version}-root-%(id -u -n)
+
+%define		_prefix		/usr/X11R6
+
+%description
+Session Management library.
+
+%description -l pl
+Biblioteka zarz±dzania sesj±
+
+
+%package devel
+Summary:	Header files libSM development
+Summary(pl):	Pliki nag³ówkowe do biblioteki libSM
+Group:		X11/Development/Libraries
+Requires:	xorg-lib-libSM = %{version}-%{release}
+Requires:	xorg-lib-libICE-devel
+
+%description devel
+Session Management library.
+
+This package contains the header files needed to develop programs that
+use these libSM.
+
+%description devel -l pl
+Biblioteka zarz±dzania sesj±
+
+Pakiet zawiera pliki nag³ówkowe niezbêdne do kompilowania programów
+u¿ywaj±cych biblioteki libSM.
+
+
+%package static
+Summary:	Static libSM libraries
+Summary(pl):	Biblioteki statyczne libSM
+Group:		Development/Libraries
+Requires:	xorg-lib-libSM-devel = %{version}-%{release}
+
+%description static
+Session Management library.
+
+This package contains the static libSM library.
+
+%description static -l pl
+Biblioteka zarz±dzania sesj±
+
+Pakiet zawiera statycz± bibliotekê libSM.
+
+
+%prep
+%setup -q -n libSM-%{version}
+
+%build
+%{__libtoolize}
+%{__aclocal}
+%{__autoconf}
+%{__autoheader}
+%{__automake}
+%configure
+%{__make}
+
+%install
+rm -rf $RPM_BUILD_ROOT
+
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT \
+	pkgconfigdir=%{_pkgconfigdir}
+
+%clean
+rm -rf $RPM_BUILD_ROOT
+
+%post	-p /sbin/ldconfig
+%postun	-p /sbin/ldconfig
+
+
+%files
+%defattr(644,root,root,755)
+%doc AUTHORS ChangeLog
+%attr(755,root,wheel) %{_libdir}/libSM.so.*
+
+
+%files devel
+%defattr(644,root,root,755)
+%{_includedir}/X11/SM/*.h
+%{_libdir}/libSM.la
+%attr(755,root,wheel) %{_libdir}/libSM.so
+%{_pkgconfigdir}/sm.pc
+
+
+%files static
+%defattr(644,root,root,755)
+%{_libdir}/libSM.a
