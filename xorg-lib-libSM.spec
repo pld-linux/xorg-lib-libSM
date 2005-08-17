@@ -17,6 +17,7 @@ BuildRequires:	libtool
 BuildRequires:	pkg-config
 BuildRequires:	xorg-util-util-macros
 BuildRequires:	xorg-lib-xtrans-devel
+Obsoletes:	libSM
 BuildRoot:	%{tmpdir}/libSM-%{version}-root-%(id -u -n)
 
 %define		_prefix		/usr/X11R6
@@ -34,6 +35,7 @@ Summary(pl):	Pliki nag³ówkowe do biblioteki libSM
 Group:		X11/Development/Libraries
 Requires:	xorg-lib-libSM = %{version}-%{release}
 Requires:	xorg-lib-libICE-devel
+Obsoletes:	libSM-devel
 
 %description devel
 Session Management library.
@@ -53,6 +55,7 @@ Summary:	Static libSM libraries
 Summary(pl):	Biblioteki statyczne libSM
 Group:		Development/Libraries
 Requires:	xorg-lib-libSM-devel = %{version}-%{release}
+Obsoletes:	libSM-static
 
 %description static
 Session Management library.
