@@ -16,7 +16,7 @@ BuildRequires:	xorg-lib-libICE-devel
 BuildRequires:	xorg-lib-xtrans-devel
 BuildRequires:	xorg-util-util-macros
 Obsoletes:	libSM
-BuildRoot:	%{tmpdir}/libSM-%{version}-root-%(id -u -n)
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_prefix		/usr/X11R6
 
