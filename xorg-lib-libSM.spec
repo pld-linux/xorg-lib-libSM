@@ -1,14 +1,14 @@
 Summary:	Session Management library
 Summary(pl):	Biblioteka zarz±dzania sesj±
 Name:		xorg-lib-libSM
-Version:	0.99.0
-Release:	0.02
+Version:	0.99.1
+Release:	0.1
 License:	MIT
 Group:		X11/Libraries
-Source0:	http://xorg.freedesktop.org/X11R7.0-RC0/lib/libSM-%{version}.tar.bz2
-# Source0-md5:	dc7e3578105f8ac1c0db58a5e292bc7f
+Source0:	http://xorg.freedesktop.org/releases/X11R7.0-RC1/lib/libSM-%{version}.tar.bz2
+# Source0-md5:	b006ad2249091e63759f85114550beed
 URL:		http://xorg.freedesktop.org/
-BuildRequires:	autoconf
+BuildRequires:	autoconf >= 2.57
 BuildRequires:	automake
 BuildRequires:	libtool
 BuildRequires:	pkgconfig >= 0.19
@@ -57,7 +57,7 @@ Session Management library.
 This package contains the static libSM library.
 
 %description static -l pl
-Biblioteka zarz±dzania sesj±
+Biblioteka zarz±dzania sesj±.
 
 Pakiet zawiera statycz± bibliotekê libSM.
 
@@ -88,13 +88,14 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc AUTHORS ChangeLog
+%doc AUTHORS COPYING ChangeLog
 %attr(755,root,root) %{_libdir}/libSM.so.*.*.*
 
 %files devel
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/libSM.so
 %{_libdir}/libSM.la
+%dir %{_includedir}/X11/SM
 %{_includedir}/X11/SM/*.h
 %{_pkgconfigdir}/sm.pc
 
