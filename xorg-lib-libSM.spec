@@ -25,8 +25,8 @@ Session Management library.
 Biblioteka zarz±dzania sesj±.
 
 %package devel
-Summary:	Header files libSM development
-Summary(pl):	Pliki nag³ówkowe do biblioteki libSM
+Summary:	Header files for libSM library
+Summary(pl):	Pliki nag³ówkowe biblioteki libSM
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	xorg-lib-libICE-devel
@@ -36,7 +36,7 @@ Obsoletes:	libSM-devel
 Session Management library.
 
 This package contains the header files needed to develop programs that
-use these libSM.
+use libSM.
 
 %description devel -l pl
 Biblioteka zarz±dzania sesj±
