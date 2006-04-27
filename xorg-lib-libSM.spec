@@ -1,12 +1,12 @@
 Summary:	Session Management library
 Summary(pl):	Biblioteka zarz±dzania sesj±
 Name:		xorg-lib-libSM
-Version:	1.0.0
+Version:	1.0.1
 Release:	1
 License:	MIT
 Group:		X11/Libraries
-Source0:	http://xorg.freedesktop.org/releases/X11R7.0/src/lib/libSM-%{version}.tar.bz2
-# Source0-md5:	7cfe53ae26000062725c470da11e7659
+Source0:	http://xorg.freedesktop.org/releases/individual/lib/libSM-%{version}.tar.bz2
+# Source0-md5:	f15315b5ed2fde4dc6688ef004a34e8a
 URL:		http://xorg.freedesktop.org/
 BuildRequires:	autoconf >= 2.57
 BuildRequires:	automake
