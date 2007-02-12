@@ -1,5 +1,5 @@
 Summary:	Session Management library
-Summary(pl.UTF-8):   Biblioteka zarządzania sesją
+Summary(pl.UTF-8):	Biblioteka zarządzania sesją
 Name:		xorg-lib-libSM
 Version:	1.0.2
 Release:	4
@@ -26,7 +26,7 @@ Biblioteka zarządzania sesją.
 
 %package devel
 Summary:	Header files for libSM library
-Summary(pl.UTF-8):   Pliki nagłówkowe biblioteki libSM
+Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki libSM
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	xorg-lib-libICE-devel
@@ -46,7 +46,7 @@ używających biblioteki libSM.
 
 %package static
 Summary:	Static libSM library
-Summary(pl.UTF-8):   Biblioteka statyczna libSM
+Summary(pl.UTF-8):	Biblioteka statyczna libSM
 Group:		X11/Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 Obsoletes:	libSM-static
