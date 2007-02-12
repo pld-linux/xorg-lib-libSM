@@ -1,5 +1,5 @@
 Summary:	Session Management library
-Summary(pl):	Biblioteka zarz±dzania sesj±
+Summary(pl.UTF-8):   Biblioteka zarzÄ…dzania sesjÄ…
 Name:		xorg-lib-libSM
 Version:	1.0.2
 Release:	4
@@ -21,12 +21,12 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 Session Management library.
 
-%description -l pl
-Biblioteka zarz±dzania sesj±.
+%description -l pl.UTF-8
+Biblioteka zarzÄ…dzania sesjÄ….
 
 %package devel
 Summary:	Header files for libSM library
-Summary(pl):	Pliki nag³ówkowe biblioteki libSM
+Summary(pl.UTF-8):   Pliki nagÅ‚Ã³wkowe biblioteki libSM
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	xorg-lib-libICE-devel
@@ -38,15 +38,15 @@ Session Management library.
 This package contains the header files needed to develop programs that
 use libSM.
 
-%description devel -l pl
-Biblioteka zarz±dzania sesj±
+%description devel -l pl.UTF-8
+Biblioteka zarzÄ…dzania sesjÄ…
 
-Pakiet zawiera pliki nag³ówkowe niezbêdne do kompilowania programów
-u¿ywaj±cych biblioteki libSM.
+Pakiet zawiera pliki nagÅ‚Ã³wkowe niezbÄ™dne do kompilowania programÃ³w
+uÅ¼ywajÄ…cych biblioteki libSM.
 
 %package static
 Summary:	Static libSM library
-Summary(pl):	Biblioteka statyczna libSM
+Summary(pl.UTF-8):   Biblioteka statyczna libSM
 Group:		X11/Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 Obsoletes:	libSM-static
@@ -56,10 +56,10 @@ Session Management library.
 
 This package contains the static libSM library.
 
-%description static -l pl
-Biblioteka zarz±dzania sesj±.
+%description static -l pl.UTF-8
+Biblioteka zarzÄ…dzania sesjÄ….
 
-Pakiet zawiera statycz± bibliotekê libSM.
+Pakiet zawiera statyczÄ… bibliotekÄ™ libSM.
 
 %prep
 %setup -q -n libSM-%{version}
