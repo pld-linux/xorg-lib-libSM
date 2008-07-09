@@ -90,6 +90,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc AUTHORS COPYING ChangeLog
 %attr(755,root,root) %{_libdir}/libSM.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libSM.so.6
 
 %files devel
 %defattr(644,root,root,755)
