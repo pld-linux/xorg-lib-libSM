@@ -11,6 +11,7 @@ URL:		http://xorg.freedesktop.org/
 BuildRequires:	autoconf >= 2.57
 BuildRequires:	automake
 BuildRequires:	libtool
+BuildRequires:	libuuid-devel
 BuildRequires:	pkgconfig >= 1:0.19
 BuildRequires:	xorg-lib-libICE-devel
 BuildRequires:	xorg-lib-xtrans-devel
@@ -29,6 +30,7 @@ Summary:	Header files for libSM library
 Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki libSM
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}-%{release}
+Requires:	libuuid-devel
 Requires:	xorg-lib-libICE-devel
 Obsoletes:	libSM-devel
 
