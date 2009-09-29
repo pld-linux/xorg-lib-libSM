@@ -1,5 +1,5 @@
-Summary:	Session Management library
-Summary(pl.UTF-8):	Biblioteka zarządzania sesją
+Summary:	X Session Management library
+Summary(pl.UTF-8):	Biblioteka zarządzania sesją X
 Name:		xorg-lib-libSM
 Version:	1.1.1
 Release:	1
@@ -15,15 +15,15 @@ BuildRequires:	libuuid-devel
 BuildRequires:	pkgconfig >= 1:0.19
 BuildRequires:	xorg-lib-libICE-devel
 BuildRequires:	xorg-lib-xtrans-devel
-BuildRequires:	xorg-util-util-macros
+BuildRequires:	xorg-util-util-macros >= 1.2
 Obsoletes:	libSM
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-Session Management library.
+X Session Management library.
 
 %description -l pl.UTF-8
-Biblioteka zarządzania sesją.
+Biblioteka zarządzania sesją X.
 
 %package devel
 Summary:	Header files for libSM library
@@ -35,13 +35,13 @@ Requires:	xorg-lib-libICE-devel
 Obsoletes:	libSM-devel
 
 %description devel
-Session Management library.
+X Session Management library.
 
 This package contains the header files needed to develop programs that
 use libSM.
 
 %description devel -l pl.UTF-8
-Biblioteka zarządzania sesją
+Biblioteka zarządzania sesją X.
 
 Pakiet zawiera pliki nagłówkowe niezbędne do kompilowania programów
 używających biblioteki libSM.
@@ -54,12 +54,12 @@ Requires:	%{name}-devel = %{version}-%{release}
 Obsoletes:	libSM-static
 
 %description static
-Session Management library.
+X Session Management library.
 
 This package contains the static libSM library.
 
 %description static -l pl.UTF-8
-Biblioteka zarządzania sesją.
+Biblioteka zarządzania sesją X.
 
 Pakiet zawiera statyczą bibliotekę libSM.
 
@@ -90,7 +90,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc AUTHORS COPYING ChangeLog
+%doc AUTHORS COPYING ChangeLog README
 %attr(755,root,root) %{_libdir}/libSM.so.*.*.*
 %attr(755,root,root) %ghost %{_libdir}/libSM.so.6
 
