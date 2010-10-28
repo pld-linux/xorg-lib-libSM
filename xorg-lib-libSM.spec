@@ -1,21 +1,23 @@
 Summary:	X Session Management library
 Summary(pl.UTF-8):	Biblioteka zarządzania sesją X
 Name:		xorg-lib-libSM
-Version:	1.1.1
+Version:	1.2.0
 Release:	1
 License:	MIT
 Group:		X11/Libraries
 Source0:	http://xorg.freedesktop.org/releases/individual/lib/libSM-%{version}.tar.bz2
-# Source0-md5:	6889a455496aaaa65b1fa05fc518d179
+# Source0-md5:	e78c447bf1790552b644eca81b542742
 URL:		http://xorg.freedesktop.org/
-BuildRequires:	autoconf >= 2.57
+BuildRequires:	autoconf >= 2.60
 BuildRequires:	automake
 BuildRequires:	libtool
 BuildRequires:	libuuid-devel
 BuildRequires:	pkgconfig >= 1:0.19
-BuildRequires:	xorg-lib-libICE-devel
+BuildRequires:	xmlto >= 0.0.20
+BuildRequires:	xorg-lib-libICE-devel >= 1.0.5
 BuildRequires:	xorg-lib-xtrans-devel
-BuildRequires:	xorg-util-util-macros >= 1.2
+BuildRequires:	xorg-sgml-doctools >= 1.5
+BuildRequires:	xorg-util-util-macros >= 1.10
 Obsoletes:	libSM
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -31,7 +33,7 @@ Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki libSM
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	libuuid-devel
-Requires:	xorg-lib-libICE-devel
+Requires:	xorg-lib-libICE-devel >= 1.0.5
 Obsoletes:	libSM-devel
 
 %description devel
@@ -79,8 +81,7 @@ Pakiet zawiera statyczą bibliotekę libSM.
 rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
-	DESTDIR=$RPM_BUILD_ROOT \
-	pkgconfigdir=%{_pkgconfigdir}
+	DESTDIR=$RPM_BUILD_ROOT
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -96,6 +97,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files devel
 %defattr(644,root,root,755)
+%doc doc/*.{html,css}
 %attr(755,root,root) %{_libdir}/libSM.so
 %{_libdir}/libSM.la
 %dir %{_includedir}/X11/SM
