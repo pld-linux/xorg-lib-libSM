@@ -10,6 +10,7 @@ Source0:	http://xorg.freedesktop.org/releases/individual/lib/libSM-%{version}.ta
 URL:		http://xorg.freedesktop.org/
 BuildRequires:	autoconf >= 2.60
 BuildRequires:	automake
+BuildRequires:	docbook-dtd412-xml
 BuildRequires:	libtool
 BuildRequires:	libuuid-devel
 BuildRequires:	pkgconfig >= 1:0.19
