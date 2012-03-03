@@ -1,12 +1,12 @@
 Summary:	X Session Management library
 Summary(pl.UTF-8):	Biblioteka zarządzania sesją X
 Name:		xorg-lib-libSM
-Version:	1.2.0
+Version:	1.2.1
 Release:	1
 License:	MIT
 Group:		X11/Libraries
 Source0:	http://xorg.freedesktop.org/releases/individual/lib/libSM-%{version}.tar.bz2
-# Source0-md5:	e78c447bf1790552b644eca81b542742
+# Source0-md5:	766de9d1e1ecf8bf74cebe2111d8e2bd
 URL:		http://xorg.freedesktop.org/
 BuildRequires:	autoconf >= 2.60
 BuildRequires:	automake
@@ -14,11 +14,12 @@ BuildRequires:	docbook-dtd412-xml
 BuildRequires:	libtool
 BuildRequires:	libuuid-devel
 BuildRequires:	pkgconfig >= 1:0.19
-BuildRequires:	xmlto >= 0.0.20
+BuildRequires:	xmlto >= 0.0.22
 BuildRequires:	xorg-lib-libICE-devel >= 1.0.5
 BuildRequires:	xorg-lib-xtrans-devel
-BuildRequires:	xorg-sgml-doctools >= 1.5
-BuildRequires:	xorg-util-util-macros >= 1.10
+BuildRequires:	xorg-sgml-doctools >= 1.8
+BuildRequires:	xorg-util-util-macros >= 1.12
+Requires:	xorg-lib-libICE >= 1.0.5
 Obsoletes:	libSM
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -98,7 +99,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files devel
 %defattr(644,root,root,755)
-%doc doc/*.{html,css}
+%doc doc/*.html
 %attr(755,root,root) %{_libdir}/libSM.so
 %{_libdir}/libSM.la
 %dir %{_includedir}/X11/SM
