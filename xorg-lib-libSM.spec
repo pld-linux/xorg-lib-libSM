@@ -1,12 +1,12 @@
 Summary:	X Session Management library
 Summary(pl.UTF-8):	Biblioteka zarządzania sesją X
 Name:		xorg-lib-libSM
-Version:	1.2.3
+Version:	1.2.4
 Release:	1
 License:	MIT
 Group:		X11/Libraries
-Source0:	https://xorg.freedesktop.org/releases/individual/lib/libSM-%{version}.tar.bz2
-# Source0-md5:	87c7fad1c1813517979184c8ccd76628
+Source0:	https://xorg.freedesktop.org/releases/individual/lib/libSM-%{version}.tar.xz
+# Source0-md5:	ffa434ed96ccae45533b3d653300730e
 URL:		https://xorg.freedesktop.org/
 BuildRequires:	autoconf >= 2.60
 BuildRequires:	automake
@@ -14,14 +14,16 @@ BuildRequires:	docbook-dtd412-xml
 BuildRequires:	libtool
 BuildRequires:	libuuid-devel
 BuildRequires:	pkgconfig >= 1:0.19
+BuildRequires:	tar >= 1:1.22
 BuildRequires:	xmlto >= 0.0.22
-BuildRequires:	xorg-lib-libICE-devel >= 1.0.5
+BuildRequires:	xorg-lib-libICE-devel >= 1.1.0
 BuildRequires:	xorg-lib-xtrans-devel
 BuildRequires:	xorg-proto-xproto-devel
 BuildRequires:	xorg-sgml-doctools >= 1.8
 BuildRequires:	xorg-util-util-macros >= 1.12
-Requires:	xorg-lib-libICE >= 1.0.5
-Obsoletes:	libSM
+BuildRequires:	xz
+Requires:	xorg-lib-libICE >= 1.1.0
+Obsoletes:	libSM < 6.1
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -36,8 +38,8 @@ Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki libSM
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	libuuid-devel
-Requires:	xorg-lib-libICE-devel >= 1.0.5
-Obsoletes:	libSM-devel
+Requires:	xorg-lib-libICE-devel >= 1.1.0
+Obsoletes:	libSM-devel < 6.1
 
 %description devel
 X Session Management library.
@@ -56,7 +58,7 @@ Summary:	Static libSM library
 Summary(pl.UTF-8):	Biblioteka statyczna libSM
 Group:		X11/Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
-Obsoletes:	libSM-static
+Obsoletes:	libSM-static < 6.1
 
 %description static
 X Session Management library.
@@ -94,7 +96,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc AUTHORS COPYING ChangeLog README
+%doc AUTHORS COPYING ChangeLog README.md
 %attr(755,root,root) %{_libdir}/libSM.so.*.*.*
 %attr(755,root,root) %ghost %{_libdir}/libSM.so.6
 
